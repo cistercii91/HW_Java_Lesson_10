@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Assertions;
 
 public class RadioTest {
 
+
     @Test
     public void inputChanelMax() {
         int expected = 8;
