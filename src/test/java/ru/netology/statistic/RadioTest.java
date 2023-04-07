@@ -1,6 +1,6 @@
 package ru.netology.statistic;
 import org.example.Radio;
-import org.junit.Test;
+import org.testng.annotations.Test;
 import org.junit.jupiter.api.Assertions;
 
 
@@ -84,7 +84,7 @@ public class RadioTest {
     public void inputVolumeInput() {
         Radio radio = new Radio();
         radio.setVolume(1);
-        int actualResult = radio.getChannel();
+        int actualResult = radio.getVolume();
         int expected = 1;
 
         Assertions.assertEquals(expected, actualResult);
@@ -133,16 +133,4 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actualResult);
     }
-
-
-
-
-
-
-
-
-
-
-
-
 }

@@ -9,7 +9,7 @@ public class Radio {
     }
 
     public void setChannel(int channel) {
-        if (0 < channel) {
+        if (0 > channel) {
             return;
         } else if (channel > 9) {
             return;
@@ -39,7 +39,7 @@ public class Radio {
     }
 
     public void setVolume(int volume) {
-        this.volume = volume;
+         this.volume = volume;
     }
 
     public void increaseVolume() {
