@@ -1,13 +1,15 @@
 package org.example;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-
+@NoArgsConstructor
+@Data
 public class Radio {
     private int channel;
     private int numberChannel = 9;
     private int volume;
 
-    public Radio() {
-    }
     public Radio(int numberChannel) {
         if (numberChannel == 0) {
             System.out.println("Некорректный ввод, значение будет выставлено по умолчанию - 10");
@@ -18,12 +20,6 @@ public class Radio {
         } else this.numberChannel = numberChannel - 1;
     }
 
-
-
-
-    public int getChannel() {
-        return channel;
-    }
 
     public void setChannel(int channel) {
         if (0 > channel) {
@@ -49,10 +45,6 @@ public class Radio {
         } else {
             channel = channel - 1;
         }
-    }
-
-    public int getVolume() {
-        return volume;
     }
 
     public void setVolume(int volume) {
