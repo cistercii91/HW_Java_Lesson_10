@@ -3,7 +3,23 @@ package org.example;
 
 public class Radio {
     private int channel;
+    private int numberChannel = 9;
     private int volume;
+
+    public Radio() {
+    }
+    public Radio(int numberChannel) {
+        if (numberChannel == 0) {
+            System.out.println("Некорректный ввод, значение будет выставлено по умолчанию - 10");
+            this.numberChannel = 9;
+        } else if (numberChannel < 0) {
+            System.out.println("Некорректный ввод, значение будет выставлено по умолчанию - 10");
+            this.numberChannel = 9;
+        } else this.numberChannel = numberChannel - 1;
+    }
+
+
+
 
     public int getChannel() {
         return channel;
@@ -12,7 +28,7 @@ public class Radio {
     public void setChannel(int channel) {
         if (0 > channel) {
             return;
-        } else if (channel > 9) {
+        } else if (channel > numberChannel) {
             return;
         } else {
             this.channel = channel;
@@ -20,7 +36,7 @@ public class Radio {
     }
 
     public void next() {
-        if (channel == 9) {
+        if (channel == numberChannel) {
             channel = 0;
         } else {
             channel++;
@@ -29,7 +45,7 @@ public class Radio {
 
     public void prev() {
         if (channel == 0) {
-            channel = 9;
+            channel = numberChannel;
         } else {
             channel = channel - 1;
         }
